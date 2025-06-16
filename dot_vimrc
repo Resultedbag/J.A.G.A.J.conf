@@ -1,0 +1,106 @@
+" ===============================
+" BASIC SETTINGS
+" ===============================
+set nocompatible              " Required for modern features
+filetype plugin indent on     " Enable filetype detection and auto-indent
+syntax on                     " Enable syntax highlighting
+set hidden                    " Allow switching buffers without saving
+set nobackup                  " Disable backup files
+set noswapfile                " Disable swap files
+set nowritebackup             " Disable write backups
+
+" ===============================
+" UI SETTINGS
+" ===============================
+set number relativenumber     " Show absolute/current + relative line numbers
+set scrolloff=10              " Keep context above/below cursor
+set sidescrolloff=5           " Horizontal context while scrolling
+set showmatch                 " Briefly jump to matching paren
+set matchtime=2               " How long to highlight matching paren (tenths of a second)
+set showcmd                   " Show command in status line
+set showmode                  " Display mode in ruler
+set laststatus=2              " Always show status line
+set signcolumn=yes            " Keep sign column visible (for plugins like gitgutter)
+set foldcolumn=1              " Show minimal fold column
+set nowrap                    " Disable line wrapping
+
+" ===============================
+" EDITING SETTINGS
+" ===============================
+set shiftwidth=4              " Indentation width
+set tabstop=4                 " Display tab width
+set expandtab                 " Use spaces instead of tabs
+set autoindent                " Inherit indentation from previous line
+set smartindent               " Enhanced auto-indentation
+set incsearch                 " Live search
+set ignorecase smartcase      " Case-insensitive search with smart override
+set history=1000              " Increase command history
+set clipboard=unnamedplus     " Use system clipboard
+set mouse=a                   " Enable mouse support
+set splitright                " Vertical splits open right
+set splitbelow                " Horizontal splits open below
+set lazyredraw                " Faster macro/script execution
+set title                     " Set terminal title to current file
+
+" ===============================
+" WILDMENU SETTINGS
+" ===============================
+set wildmenu
+set wildmode=longest:full,full " Tab completion behavior
+set wildignorecase             " Case-insensitive file searching
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.fvl,*.img,*.xlsx,*/
+\tmp/*,*.swp,*.swo,*.o,*.out,*.exe,*.dll,*.obj,*.jar,*.class,*.zip,*.tar.gz,
+\.tar.bz2,*.rar,*.7z,*.iso,*.mp3,*.mp4,*.avi,*.flv,*.ogg,*.mov,*.wmv,*.wav,
+\.flac,*.orig,*.rej,*.DS_Store,*.git,*.hg,*.svn
+
+" ===============================
+" AUTOCOMMANDS
+" ===============================
+augroup CustomSettings
+    autocmd!
+    " Special indentation for specific file types
+    autocmd FileType python,html,css,js setlocal ts=2 sts=2 sw=2
+    " Open NERDTree automatically if no arguments provided
+    autocmd VimEnter * if argc() == 0 | NERDTree | endif
+augroup END
+
+" ===============================
+" COLORS AND APPEARANCE
+" ===============================
+set background=dark
+colorscheme industry
+
+" Transparent background elements
+highlight clear SignColumn
+highlight clear CursorLine
+highlight NonText guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight StatusLineNC guibg=NONE ctermbg=NONE
+highlight VertSplit guibg=NONE ctermbg=NONE
+highlight Pmenu guibg=NONE ctermbg=NONE
+highlight PmenuSel guibg=NONE ctermbg=NONE
+highlight CursorLine cterm=underline gui=underline
+
+" ===============================
+" CUSTOM MAPPINGS
+" ===============================
+nnoremap <C-z> <nop>          " Disable suspend shortcut
+inoremap <F12> ~             " Insert tilde character
+
+" ===============================
+" TERMINAL SETTINGS
+" ===============================
+if &term =~ 'xterm'
+  let &t_ti.="\e[1 q"
+  let &t_EI.="\e[2 q"
+  let &t_SI.="\e[5 q"
+  let &t_te.="\e[0 q"
+endif
+
+" ===============================
+" PERFORMANCE & MISC
+" ===============================
+set updatetime=300            " Faster saving for plugins
+set timeoutlen=500            " Mapping timeout
+set undodir=~/.vim/undo       " Persistent undo history
+set undofile                  " Enable persistent undo
