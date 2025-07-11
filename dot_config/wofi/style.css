@@ -1,0 +1,38 @@
+* {
+    border-radius: 0;
+    color: white;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+scrollbar,
+scrollbar slider {
+  all: unset;
+}
+
+#window {
+    background-color: black;
+    border: 1px solid white;
+    font-size: 14px;
+}
+
+#scroll {
+    padding: 1px;
+}
+
+#entry:selected{
+    background: linear-gradient(90deg, red, darkred);
+}
+
+image{
+    margin-right: .5em;
+}
+
+#input{
+    padding: 3px 10px;
+    background-color: black;
+    border: 1px solid white;
+}
