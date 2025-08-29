@@ -27,7 +27,12 @@ scrollbar slider {
     background: linear-gradient(90deg, red, darkred);
 }
 
-image{
+#text {
+    background-color: transparent;
+}
+
+#img{
+    background-color: transparent;
     margin-right: .5em;
 }
 

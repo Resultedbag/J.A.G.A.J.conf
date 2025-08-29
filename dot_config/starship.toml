@@ -1,0 +1,69 @@
+add_newline = true
+format = """
+[╭─](bold red) \\( $directory\\)$git_branch$git_status
+[╰](bold red) """
+
+# Show current directory
+[directory]
+truncation_length = 7
+style = "white bold"
+
+# Git branch and status
+[git_branch]
+symbol = " "
+style = "purple"
+
+[git_status]
+style = "red"
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕ "
+untracked = "?${count} "
+staged = "+${count} "
+modified = "!${count} "
+deleted = "✘${count} "
+
+# Show programming language versions
+[python]
+symbol = " "
+style = "green"
+
+[nodejs]
+symbol = " "
+style = "green"
+
+[rust]
+symbol = "🦀 "
+style = "red"
+
+# Show package version (from package.json, etc.)
+[package]
+symbol = "📦 "
+style = "yellow"
+
+# Show username (only on SSH)
+[username]
+show_always = false
+style_user = "bold green"
+
+# Show hostname (only on SSH)
+[hostname]
+ssh_only = true
+style = "dimmed green"
+
+# Show command duration if longer than 2s
+[cmd_duration]
+min_time = 2000
+format = "⏱ $duration "
+style = "yellow"
+
+# Show exit status of last command if non-zero
+[status]
+symbol = "✖ "
+style = "bold red"
+
+# Final prompt character
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+

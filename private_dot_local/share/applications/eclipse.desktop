@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Eclipse IDE
-Comment=Integrated Development Environment
-Exec=env GTK_THEME=Adwaita-dark SWT_GTK3=1 eclipse
-Icon=eclipse
-Terminal=false
-Type=Application
-Categories=Development;IDE;

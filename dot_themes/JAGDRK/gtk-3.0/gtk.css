@@ -1,6 +1,0 @@
-@import url("gtk-main.css");
-
-.background {
-  background-color: @bg_color;
-  color: @fg_color;
-}

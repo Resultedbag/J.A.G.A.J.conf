@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Thunar
-Comment=File explorer
-Exec=env GTK_THEME=Adwaita-dark thunar
-Icon=thunar
-Terminal=false
-Type=Application
-Categories=File Explorer;
